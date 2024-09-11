@@ -1,0 +1,159 @@
+<div class="social-proof-banner" {{ block.shopify_attributes }} style="
+  {{ bg_style }}
+  color: {{ block.settings.text_color }};
+  font-size: {{ block.settings.font_size }}px;
+  padding: {{ block.settings.padding }}px;
+  border-radius: {{ block.settings.border_radius }}px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+">
+  <div class="social-proof-images" style="position: relative; width: {{ block.settings.image_width | plus: 15 }}px; height: {{ block.settings.image_width }}px; margin-right: 5px;">
+    {% if block.settings.image_1 != blank %}
+      <img src="{{ block.settings.image_1 | img_url: '100x100', crop: 'center' }}" alt="" style="
+        width: {{ block.settings.image_width }}px;
+        height: {{ block.settings.image_width }}px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      ">
+    {% endif %}
+    {% if block.settings.image_2 != blank %}
+      <img src="{{ block.settings.image_2 | img_url: '100x100', crop: 'center' }}" alt="" style="
+        width: {{ block.settings.image_width }}px;
+        height: {{ block.settings.image_width }}px;
+        border-radius: 50%;
+        position: absolute;
+        left: 15px;
+        top: 0;
+        z-index: 2;
+      ">
+    {% endif %}
+  </div>
+  <div class="social-proof-content" style="display: flex; align-items: center; margin-left: -5px;">
+    <span class="social-proof-influencer" style="margin-right: 5px;">
+      <strong>{{ block.settings.names }}</strong>
+    </span>
+    {% if block.settings.show_verified_icon %}
+      <span class="social-proof-checkmark" style="margin-right: 5px;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.36 5.17499L10.44 4.43499C10.3662 4.37611 10.309 4.29907 10.274 4.21142C10.2389 4.12377 10.2272 4.02852 10.24 3.93499L10.365 2.76499C10.3824 2.60953 10.3646 2.45215 10.313 2.30447C10.2615 2.15678 10.1774 2.02256 10.067 1.91171C9.95663 1.80086 9.82278 1.7162 9.67532 1.66398C9.52786 1.61176 9.37056 1.59331 9.21502 1.60999L8.04002 1.73499C7.94649 1.74781 7.85124 1.73612 7.76359 1.70106C7.67594 1.666 7.5989 1.60878 7.54002 1.53499L6.81502 0.629993C6.71364 0.513399 6.58843 0.419915 6.44783 0.355851C6.30723 0.291787 6.15452 0.258636 6.00002 0.258636C5.84552 0.258636 5.69281 0.291787 5.55221 0.355851C5.41161 0.419915 5.2864 0.513399 5.18502 0.629993L4.44502 1.54999C4.38614 1.62378 4.3091 1.681 4.22145 1.71606C4.1338 1.75112 4.03855 1.76281 3.94502 1.74999L2.78502 1.62499C2.62948 1.60831 2.47218 1.62676 2.32472 1.67898C2.17726 1.7312 2.04341 1.81586 1.93304 1.92671C1.82267 2.03756 1.73859 2.17178 1.68701 2.31947C1.63543 2.46715 1.61766 2.62453 1.63502 2.77999L1.76002 3.94999C1.77284 4.04352 1.76115 4.13877 1.72609 4.22642C1.69103 4.31407 1.63381 4.39111 1.56002 4.44999L0.64002 5.17499C0.518007 5.27291 0.419536 5.39698 0.351874 5.53804C0.284211 5.6791 0.249084 5.83355 0.249084 5.98999C0.249084 6.14644 0.284211 6.30089 0.351874 6.44195C0.419536 6.58301 0.518007 6.70707 0.64002 6.80499L1.56002 7.54499C1.63343 7.6042 1.69038 7.68128 1.7254 7.76884C1.76042 7.8564 1.77235 7.9515 1.76002 8.04499L1.63502 9.21999C1.61769 9.37513 1.63567 9.53217 1.68763 9.67937C1.73958 9.82657 1.82415 9.96011 1.93502 10.07C2.04333 10.183 2.17667 10.2691 2.3243 10.3212C2.47194 10.3733 2.62975 10.39 2.78502 10.37L3.96002 10.245C4.05355 10.2322 4.1488 10.2439 4.23645 10.2789C4.3241 10.314 4.40114 10.3712 4.46002 10.445L5.20002 11.365C5.29794 11.487 5.42201 11.5855 5.56306 11.6531C5.70412 11.7208 5.85857 11.7559 6.01502 11.7559C6.17147 11.7559 6.32592 11.7208 6.46698 11.6531C6.60803 11.5855 6.7321 11.487 6.83002 11.365L7.57002 10.445C7.6289 10.3712 7.70594 10.314 7.79359 10.2789C7.88124 10.2439 7.97649 10.2322 8.07002 10.245L9.24502 10.37C9.4003 10.39 9.5581 10.3733 9.70574 10.3212C9.85337 10.2691 9.98671 10.183 10.095 10.07C10.2059 9.96011 10.2905 9.82657 10.3424 9.67937C10.3944 9.53217 10.4124 9.37513 10.395 9.21999L10.27 8.04499C10.2577 7.9515 10.2696 7.8564 10.3046 7.76884C10.3397 7.68128 10.3966 7.6042 10.47 7.54499L11.39 6.80499C11.512 6.70707 11.6105 6.58301 11.6782 6.44195C11.7458 6.30089 11.781 6.14644 11.781 5.98999C11.781 5.83355 11.7458 5.6791 11.6782 5.53804C11.6105 5.39698 11.512 5.27291 11.39 5.17499H11.36ZM6.20002 7.52499C6.12297 7.62526 6.02555 7.70807 5.91418 7.76795C5.8028 7.82784 5.68 7.86344 5.55386 7.87242C5.42773 7.88139 5.30112 7.86354 5.18239 7.82003C5.06366 7.77652 4.95549 7.70834 4.86502 7.61999L3.64502 6.39999C3.5984 6.35337 3.56142 6.29803 3.53619 6.23712C3.51096 6.17621 3.49797 6.11092 3.49797 6.04499C3.49797 5.97906 3.51096 5.91378 3.53619 5.85287C3.56142 5.79196 3.5984 5.73661 3.64502 5.68999C3.69164 5.64337 3.74698 5.60639 3.8079 5.58116C3.86881 5.55593 3.93409 5.54295 4.00002 5.54295C4.06595 5.54295 4.13123 5.55593 4.19215 5.58116C4.25306 5.60639 4.3084 5.64337 4.35502 5.68999L5.50002 6.81499L7.45502 4.20999C7.53458 4.10391 7.65303 4.03377 7.78431 4.01502C7.84931 4.00573 7.9155 4.00934 7.97911 4.02564C8.04272 4.04193 8.10249 4.0706 8.15502 4.10999C8.20755 4.14939 8.2518 4.19875 8.28526 4.25525C8.31871 4.31175 8.34071 4.37428 8.34999 4.43928C8.35928 4.50428 8.35567 4.57048 8.33938 4.63408C8.32308 4.69769 8.29442 4.75746 8.25502 4.80999L6.20002 7.52499Z" fill="#4C8AE7"></path>
+        </svg>
+      </span>
+    {% endif %}
+    <span class="social-proof-text">{{ block.settings.proof_text }}</span>
+  </div>
+</div>
+
+
+###################################################################################################################################
+
+{
+  "type": "social_proof",
+  "name": "Social Proof",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "First Image",
+      "default": "jack-finnigan-rriAI0nhcbc-unsplash_1.webp"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second Image",
+      "default": "jake-nackos-IF9TK5Uy-KI-unsplash_1.webp"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Width",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "names",
+      "label": "Names",
+      "default": "Michael, Hannah"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_verified_icon",
+      "label": "Show Verified Icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "proof_text",
+      "label": "Text",
+      "default": "love this product"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background Color",
+      "options": [
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "#FFFFFF",
+          "label": "White"
+        },
+        {
+          "value": "#000000",
+          "label": "Black"
+        },
+        {
+          "value": "#F0F0F0",
+          "label": "Light Gray"
+        }
+      ],
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 5
+    }
+  ]
+}
